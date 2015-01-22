@@ -1,0 +1,40 @@
+from django.conf.urls.defaults import *
+from mysite import views
+
+正则
+urlpatterns = patterns('',
+        (r'^arcticles/(?P<year>\d{4})/$', veiws.year_archive),
+        (r'^arcticles/(?P<year>\d{4})/(?P<month>\d{2})/$', veiws.month_archive),
+)
+对应函数
+month_archive(request, year='2006', month='03')
+
+
+为url里传入固定的参数
+# urls.py
+
+        from django.conf.urls.defaults import *
+        from mysite import views
+
+        urlpatterns = patterns('',
+            (r'^foo/$', views.foobar_view, {'template_name': 'template1.html'}),
+            (r'^bar/$', views.foobar_view, {'template_name': 'template2.html'}),
+        )
+
+ # views.py
+
+        from django.shortcuts import render_to_response
+        from mysite.models import MyModel
+
+        def foobar_view(request, template_name):
+            m_list = MyModel.objects.filter(is_new=True)
+            return render_to_response(template_name, {'m_list': m_list})
+  
+
+include导入
+from django.conf.urls.defaults import *
+urlpatterns = patterns('',
+        (r'^weblog/', include('mysite.blog.urls')),
+        (r'^photos/', include('mysite.photos.urls')),
+        (r'^about/$', 'mysite.views.about'),
+)
