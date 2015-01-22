@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block title %} User Register {% endblock %}
+
+{% block content %}
+<div class="container flat-panel">
+	<div class="white-box-body all-radius">
+
+		<h4><i class="fa fa-user"></i>Enter Your Infomation<small class="pull-right">* Please fill in all fields</small></h4>
+		<hr class="mt0">
+		
+		{% if form.errors %}
+		<div class="alert alert-danger">
+			{{ form.errors}}
+		</div>
+		{% endif %}
+
+		<form action="/register/" enctype="multipart/form-data" method="post" >
+
+		<div class="form-group row mt20">
+			<div class="col-sm-4">
+				<label for="email">Email</label>
+				<div class="addon-input-group">
+					<input type="email" class="form-control" name="email" id="email" 
+						placeholde="aaa@pia.com" value="{{ form.email.value }}"
+						data-bv-notempty="true"
+						data-bv-notempty-message="* email required" 
+						data-bv-emailaddress="true"
+						data-bv-emailaddress-message="* invalid email"
+					>
+				<div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+			</div>
+			</div>
+		</div>
+
+		<div class="form-group row mt20">
+			<div class="col-sm-4">                
+				<label for="password">Password</label>
+				<div class="addon-input-group">
+					<input type="password" class="form-control" name="password" placeholder="at least 8 characters" autocomplete="off"
+					data-bv-notempty="true"
+					data-bv-notempty-message="* password required"
+					data-bv-stringlength="true"
+					minlength="8"
+					data-bv-stringlength-message="* at least 8 characters">
+					<div class="input-group-addon"><i class="fa fa-key"></i></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group row">
+		<div class="col-sm-4">                
+			<label for="repassword" class="sr-only">Confirm Password</label>
+			<div class="addon-input-group">
+				<input type="password" class="form-control" name="password_confirmation" placeholder="confirm password" autocomplete="off"
+
+				data-bv-notempty="true"
+				data-bv-notempty-message="* confirm password required"
+				data-bv-identical="true"
+				data-bv-identical-field="password"
+				data-bv-identical-message="* not same as password">
+				<div class="input-group-addon"><i class="fa fa-key"></i></div>
+			</div>
+			</div>
+		</div>
+
+
+		<div class="form-group row">
+			<div class="col-sm-4">                
+				<label for="birthday">Birthday</label>
+				<div class="addon-input-group">
+					<input type="text" id="birthday" name="birthday" placeholder="" 
+						value="{{ form.birthday.value }}" class="form-control datepicker"
+						data-bv-notempty="true"
+						data-bv-notempty-message="* required"
+					>
+					<div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-sm-4">                
+				<label for="gender">Gender</label>
+				<div class="addon-input-group">
+					<select id="gender" name="gender" class="form-control"
+						data-bv-notempty="true"
+						data-bv-notempty-message="* required">
+						<option value="0" {%ifequal form.gender.value '0' %}selected{%endifequal%}> Male </option>
+						<option value="1" {%ifequal form.gender.value '1' %}selected{%endifequal%}> Female </option>
+					</select>
+				</div>
+			</div>
+		</div>
+ 
+		<div class="form-group row">
+			<div class="col-sm-4">                
+				<label for="photo">Photo</label>
+				<div class="addon-input-group">
+					<input type="file" id="photo" name="photo" 
+						data-bv-notempty="true"
+						data-bv-notempty-message="* required"
+					>
+				</div>
+			</div>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Agree and Create Account</button>   
+
+		</form>
+
+	</div>
+
+
+</div>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
