@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} User Profile {% endblock %}
+
+{% block content %}
+<div class="container flat-panel">
+	<div class="white-box-body all-radius">
+
+		<h4><i class="fa fa-user"></i> User Profile</h4>
+		<hr class="mt0">
+		
+		{% if form.errors %}
+		<div class="alert alert-danger">
+			{{ form.errors}}
+		</div>
+		{% endif %}
+
+		<dl class="dl-horizontal">
+			<dt>Email</dt> <dd>{{ user.email }}</dd>
+			<dt>Birthday</dt> <dd>{{ user.birthday|date:'Y-m-d' }}</dd>
+			<dt>photo</dt> 
+			<dd><img src="{{ user.photo.url }}"></dd>
+		</dl>
+
+	</div>
+
+
+</div>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
