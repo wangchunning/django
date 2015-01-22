@@ -1,0 +1,25 @@
+更新安装包软件，不然无法下载程序
+
+     sudo apt-get update --fix-missing
+
+
+安装 Django
+
+     sudo apt-get install python-pip
+
+     sudo pip install Django==1.7.3
+
+安装 python-mysql
+
+     sudo apt-get install python-mysqldb
+
+
+安装 MySQL
+     
+     sudo apt-get install mysql-server
+
+启动、停止mysql：
+ 
+     sudo start/stop mysql
+
+     mysql -uroot -p
