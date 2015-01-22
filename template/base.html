@@ -1,0 +1,56 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">    
+        <title>{% block title %} Home {% endblock %}</title>
+
+        <link rel="shortcut icon" href="/assets/img/favicon.png">
+
+        <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/static/css/formValidation.min.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="/static/css/main.css">
+        <link media="all" type="text/css" rel="stylesheet" href="/static/css/custom.css">
+
+    </head>
+
+    <body class="home">
+
+        <!-- header -->
+        <div class="container">
+            <div class="header bottom-line">
+                <a href="/">Logo</a>
+            </div>
+        </div> <!-- /header -->
+
+        {% block content %} {% endblock %}
+
+
+        <!-- Footer -->
+        <div class="container noprint">
+            <div class="footer clearfix">
+                <ul class="list-unstyled list-inline pull-left">
+                    <li><a href="/coming-soon">About Us</a></li>
+                    <li><a href="/coming-soon">Contact Us</a></li>
+                    <li><a href="/privacy">Privacy</a></li>
+                    <li><a href="/legal">Legal Agreement</a></li>
+                </ul>
+            </div>
+    
+            <hr class="double-line">
+            <div class="footer-info grey">
+                <p> here is company desctiption </p>
+            </div>
+        </div> <!-- /Footer -->
+
+
+        <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+        <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="/static/js/bootstrapValidator.min.js"></script>
+        <script src="/static/js/bootstrapValidator_zh_CN.js"></script>
+
+        {% block script %} {% endblock %}
+
+    </body>
+</html>
