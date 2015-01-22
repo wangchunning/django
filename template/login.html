@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %} User Login {% endblock %}
+
+{% block content %}
+<div class="container flat-panel">
+	<div class="white-box-body all-radius">
+
+		<h4><i class="fa fa-user"></i> User Login</h4>
+		<hr class="mt0">
+		
+		{% if form.errors %}
+		<div class="alert alert-danger"> {{ form.errors}} </div>
+		{% endif %}
+
+		{% if err %}
+		<div class="alert alert-danger"> {{ err }} </div>
+		{% endif %}
+
+		<form action="/login/" method="post" >
+
+		<div class="form-group row mt20">
+			<div class="col-sm-4">
+				<label for="email">Email</label>
+				<div class="addon-input-group">
+					<input type="email" class="form-control" name="email" id="email" 
+						placeholde="aaa@pia.com" value="{{ form.email.value }}"
+						data-bv-notempty="true"
+						data-bv-notempty-message="* email required" 
+						data-bv-emailaddress="true"
+						data-bv-emailaddress-message="* invalid email"
+					>
+				<div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+			</div>
+			</div>
+		</div>
+
+		<div class="form-group row mt20">
+			<div class="col-sm-4">                
+				<label for="password">Password</label>
+				<div class="addon-input-group">
+					<input type="password" class="form-control" name="password" placeholder="at least 8 characters" autocomplete="off"
+					data-bv-notempty="true"
+					data-bv-notempty-message="* password required"
+					data-bv-stringlength="true"
+					minlength="8"
+					data-bv-stringlength-message="* at least 8 characters">
+					<div class="input-group-addon"><i class="fa fa-key"></i></div>
+				</div>
+			</div>
+		</div>
+
+
+		<button type="submit" class="btn btn-primary">Login</button>   
+
+		</form>
+
+	</div>
+
+
+</div>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
