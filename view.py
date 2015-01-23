@@ -67,6 +67,12 @@ def login(req):
 		return render_to_response('login.html', {'form': form})
 
 def logout(req):
+	'''
+	try:
+        	del request.session['member_id']
+    	except KeyError:
+        pass
+        '''
 	del req.session['uid'];
 	return render_to_response('login.html')
 
