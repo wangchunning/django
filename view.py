@@ -24,6 +24,12 @@ def register(req):
 		form = UserAccountForm(req.POST, req.FILES)  
 		if form.is_valid():  
 			form.save()  
+			'''
+			如果我们在添加数据到数据库前需要处理一些数据，再入库的话，就可以用到下面一个方法
+   			m = form.save(commit=False) save了才能返回model对象
+   			m.title = 'sss'
+   			m.save()
+   			'''
 			return HttpResponseRedirect('/login')  
 
 	return render_to_response('register.html', {'form' : form})
