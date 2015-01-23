@@ -33,6 +33,7 @@ TIME_ZONE = 'Australia/Sydney'
 
 映射上传文件 urls.py
 url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'media/'}),
+(r'^mydata/(?P<month>\d{1,2})/(?P<day>\d{1,2})/$','demo.views.mydata')
 
 常用命令
 
