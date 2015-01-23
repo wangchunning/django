@@ -74,6 +74,7 @@ def logout(req):
 
 def index(req):
 	if not has_login(req):
+		# raise Http404('Only POSTs are allowed')
 		return HttpResponseRedirect('/login/')
 
 	_user = login_user(req)
