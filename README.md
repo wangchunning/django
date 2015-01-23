@@ -2,19 +2,19 @@
 
 修改 setting.py
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydatabase',
-        'USER': 'mydatabaseuser',
-        'PASSWORD': 'mypassword',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-          'OPTIONS': {
-  'init_command': 'SET storage_engine=INNODB',
-}
-
-    }}
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'mydatabase',
+            'USER': 'mydatabaseuser',
+            'PASSWORD': 'mypassword',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+              'OPTIONS': {
+                'init_command': 'SET storage_engine=INNODB',
+                }
+        }
+    }
 
 添加模块名到 installed_app, ('apps.user_account',)
 
