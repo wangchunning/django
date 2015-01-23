@@ -1,36 +1,3 @@
-目录结构
-├── project
-│   ├── apps
-│   │   ├── app1
-│   │   │   ├── __init__.py
-│   │   │   ├── models.py
-│   │   │   ├── tests.py
-│   │   │   └── views.py
-│   │   ├── __init__.py
-│   ├── __init__.py
-│   ├── libs
-│   │   ├── lib1
-│   │   │   ├── __init__.py
-│   │   │   ├── models.py
-│   │   │   ├── tests.py
-│   │   │   └── views.py
-│   │   ├── __init__.py
-│   ├── media
-│   ├── static
-│   │   ├── css
-│   │   ├── js
-│   │   ├── img
-│   ├── templates
-│   ├── urls.py
-│   └── wsgi.py
-├── manage.py
-├── requirements
-│   ├── common.txt
-│   ├── dev.txt
-│   ├── prod.txt
-│   └── test.txt
-└── requirements.txt
-
 配置项
 
 修改 setting.py
@@ -86,3 +53,7 @@ url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'med
      python manage.py makemigrations --setting=settings 有时不好用需要手动先删除migration
      python manage.py migrate --settings=settings 修改表结构同样重复执行这两条
 
+
+3) SQL
+    User.objects.filter(username__exact=username).update(name=name)  
+    
