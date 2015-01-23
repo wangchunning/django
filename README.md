@@ -57,3 +57,7 @@ url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'med
 3) SQL
     User.objects.filter(username__exact=username).update(name=name)  
     
+    # 连表
+    Person.objects.select_related('living__province').get(firstname=u"张",lastname=u"三")
+    
+    
