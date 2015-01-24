@@ -61,10 +61,26 @@ ROOT_URLCONF, WSGI_APPLICATION 为 urls.py, wsgi.py对应位置
 3) SQL
 
     User.objects.filter(username__exact=username).update(name=name)  
+    Publisher.objects.filter(name__contains="press")
+                .filter(pub_date__year=2006)
+                .filter(headline__startswith='What')
+                .filter(pub_date__gte=datetime.date.today())
+                .filter(pub_date__gte=datetime(2005, 1, 30)
+                .filter(pub_date__lte='2006-01-01')
+                .filter(name__iexact="beatles blog")
+                .order_by('headline')[0:1]
+    Poll.objects.get(
+        Q(question__startswith='Who'),
+        Q(pub_date=date(2005, 5, 2)) | Q(pub_date=date(2005, 5, 6))
+    )
     
     # 连表
     Person.objects.select_related('living__province').get(firstname=u"张",lastname=u"三")
+    Blog.objects.filter(entry__authors__name__isnull=True)
     
+    b = Blog.objects.get(id=1)
+    b.entry_set.filter(headline__contains='Lennon')
+    b.entry_set.count()
 
 4) form
 
