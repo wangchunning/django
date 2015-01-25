@@ -1,0 +1,26 @@
+import datetime
+
+# now
+now = datetime.datetime.now()
+now.strftime('%Y-%m-%d %H:%M:%S')
+
+# str to datetime
+t_str = '2012-03-05 16:26:23'
+d = datetime.datetime.strptime(t_str, '%Y-%m-%d %H:%M:%S')
+
+# 日期计算 
+# datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)
+now = datetime.datetime.now()
+delta = datetime.timedelta(days=3)
+n_days = now + delta
+print n_days.strftime('%Y-%m-%d %H:%M:%S')
+
+year = timedelta(days=365)
+ten_years = year *10
+
+datetime1 = datetime2 +/- timedelta
+timedelta = datetime1 - datetime2
+
+
+dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
+html = "<html><body>In %s hour(s), it will be %s.</body></html>" % (offset, dt)
