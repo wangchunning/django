@@ -19,7 +19,7 @@ class LoginForm(forms.Form):
 
 def register(req):
 	form = UserAccountForm(initial={'birthday': '1980-01-01'})  
-	'''if 'q' in request.GET and request.GET['q']:
+	'''if 'q' in request.GET and request.GET['q']:'''
 	if req.method == 'POST':  
 		form = UserAccountForm(req.POST, req.FILES)  
 		if form.is_valid():  
