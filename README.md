@@ -27,7 +27,7 @@ ROOT_URLCONF, WSGI_APPLICATION 为 urls.py, wsgi.py对应位置
     
     STATICFILES_DIRS = ('static',)
     TEMPLATE_DIRS=('templates',)
-    STATICFILES_DIRS = ('media/uploads',)
+    MEDIAFILES_DIRS = ('media/uploads',)
 
     TIME_ZONE = 'Australia/Sydney'
 
