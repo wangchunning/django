@@ -1,0 +1,57 @@
+.white-box-body{
+	margin-top: 20px;
+	page-break-inside: avoid;
+	background:#fff;
+	padding: 40px;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#fff8f8f8',GradientType=0.3);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 5px rgba(0,0,0,0.3);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 5px rgba(0,0,0,0.3);
+}
+
+.all-radius{
+	    border-radius: 5px;
+}
+
+.statement{color:#737373;}
+
+hr.double-line{
+	    border-top:1px #dee0e8 solid;
+		    border-bottom: 1px #fff solid;
+			    margin-top: 0px;
+}
+
+label{
+	    font-weight: normal;
+}
+
+
+/*
+ * input-addon
+  */
+.addon-input-group {
+position: relative;
+		  border-collapse: separate;
+}
+
+.addon-input-group .input-group-addon {
+background: transparent;
+color: #ccc;
+border: none !important;
+		font-size: 18px;
+position: absolute;
+top: 2px;
+left: 0px;
+	  z-index: 2;
+width: 34px;
+height: 34px;
+		text-align: center;
+		pointer-events: none;
+}
+
+.addon-input-group input {
+	padding-left: 36px;
+}
+
+.footer {
+	    margin-top: 25px;
+}
