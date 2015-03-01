@@ -1,0 +1,24 @@
+import json
+
+a =  """{
+    "ok": true,
+    "_shards": {
+        "total": 2,
+        "successful": 1,
+        "failed": 0
+    },
+    "indices": {
+        "client_ind_2": {
+            "index": {
+                "primary_size": "2.5mb",
+                "primary_size_in_bytes": 2710326,
+                "size": "2.5mb",
+                "size_in_bytes": 2710326
+            }
+        }
+    }
+}"""
+
+b = json.loads(a)
+
+print(b['ok'])
