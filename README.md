@@ -4,6 +4,15 @@ curl http://169.254.169.254/latest/meta-data/public-ipv4
 配置项
 
 修改 setting.py
+    LANGUAGE_CODE = 'en-us'
+    TIME_ZONE = 'Australia/Sydney'
+    USE_I18N = True
+    # USE_L10N = True
+
+    DATE_FORMAT = 'Y-m-d'
+    USE_TZ = False
+    LOGIN_URL = '/'
+    BACKEND_LOGIN_URL = '/backend'
 
     DATABASES = {
         'default': {
@@ -32,7 +41,28 @@ ROOT_URLCONF, WSGI_APPLICATION 为 urls.py, wsgi.py对应位置
     TEMPLATE_DIRS=('templates',)
     MEDIAFILES_DIRS = ('media/uploads',)
 
-    TIME_ZONE = 'Australia/Sydney'
+    STATIC_URL = '/static/'
+    STATIC_ROOT = '/var/www/vportal.static/'
+    
+    STATICFILES_DIRS = (
+        # Put strings here, like "/home/html/static" or "C:/www/django/static".
+        # Always use forward slashes, even on Windows.
+        # Don't forget to use absolute paths, not relative paths.
+        '/var/www/vportal/media',
+        # '/var/www/vportal.static/',    # Enable this specially for debug server
+    )
+    
+    TMP_FILE_ROOT = '/var/www/vportal.tmp/'
+    
+    DOC_FILE_ROOT = '/var/www/vportal.doc/'
+    
+    # Static files (CSS, JavaScript, Images)
+    # https://docs.djangoproject.com/en/1.7/howto/static-files/
+    
+    TEMPLATE_DIRS = (
+        '/var/www/vportal/templates',
+    )
+
 
 映射上传文件 urls.py
 
