@@ -120,9 +120,8 @@ ROOT_URLCONF, WSGI_APPLICATION 为 urls.py, wsgi.py对应位置
     with transaction.atomic():
 
 4) form
-    #
+
     # be careful: all vaule in cleaned_data are string
-    #
     def __init__(self, user, *args, **kwargs):
         now = datetime.now().strftime('%Y-%m-%d')
         self.fields['for_sale_date'].initial = now
@@ -159,6 +158,8 @@ ROOT_URLCONF, WSGI_APPLICATION 为 urls.py, wsgi.py对应位置
 5) Model
     
     class Agreement(models.Model):
+        user = models.OneToOneField(settings.AUTH_USER_MODEL)
+        supervisor = models.OneToOneField(settings.AUTH_USER_MODEL, related_name='supervisor_of')
         
         def save(self, *args, **kwargs):
             self.agreement_title = self.agreement_title.lower()
