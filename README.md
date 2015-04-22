@@ -214,4 +214,8 @@ ROOT_URLCONF, WSGI_APPLICATION 为 urls.py, wsgi.py对应位置
 9) Template
 
 10) view
+
+    def get(self, request, *args, **kwargs):
+        business_id = self.kwargs.get('business_id', 0)
+        
     raise Http404('Page does not exist')
