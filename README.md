@@ -212,7 +212,9 @@ ROOT_URLCONF, WSGI_APPLICATION 为 urls.py, wsgi.py对应位置
     diff_datetime = (datetime.date.today() - datetime.timedelta(365 * 3)).strftime('%Y-%m-%d %H:%I:%S') // 3 years ago
     
 9) Template
-
+    
+    {% for parent_name, sub_categories in form.BusinessCategory.make_category_dict.iteritems %}
+    
 10) view
 
     def get(self, request, *args, **kwargs):
